@@ -1,0 +1,52 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="stl-flex stl-flex-row stl-justify-center">
+    <div style="padding: 5rem 1.5rem 1.5rem; min-width: 18rem;">
+      <ul class="list-unstyled">
+        <li class="stl-mb-8">
+          <h3 class="stl-font-bold stl-mb-2">BRAND</h3>
+          <div id="facetsCategory"></div>
+        </li>  
+        <li class="stl-mb-8">
+          <h3 class="stl-font-bold stl-mb-2">CASE SIZE</h3>
+          <div id="facetsPrice"></div>
+        </li>  
+      </ul>
+    </div>    
+    <div class="stl-flex stl-flex-col stl-flex-grow stl-max-w-6xl">
+      <div id="search-box" class="stl-mb-8 stl-w-full stl-max-w-2xl stl-input stl-group stl-input-medium" id="inputfield" style="margin: 2rem 0;"></div>
+      <div class="stl-card stl-display-body stl-card-z100 stl-flex-grow">
+        <div id="hits"></div>  
+      </div>    
+      <div id="pagination"></div>
+    </div>
+  </main>
+
+  <script type="text/html" id="hit-template">   
+    <div class="hit">
+      <div class="image-attribute">
+        <a target="_parent" href="{{#helpers.highlight}}{ "attribute": "url" }{{/helpers.highlight}}">
+          <img src="{{#helpers.highlight}}{ "attribute": "THUMBNAIL_IMAGES" }{{/helpers.highlight}}">
+        </a>
+      </div>
+      <div class="attributes-list">
+        <div class="primary-attribute stl-font-bold stl-mb-1 stl-uppercase">
+          <a target="_parent" href="{{#helpers.highlight}}{ "attribute": "url" }{{/helpers.highlight}}">
+            {{#helpers.highlight}}{ "attribute": "PRODUCT_NAME" }{{/helpers.highlight}}
+          </a><br/>
+          {{#helpers.highlight}}{ "attribute": "BRAND" }{{/helpers.highlight}}
+        </div>
+        <div class="tertiary-attribute stl-mb-1">
+          Case of {{#helpers.highlight}}{ "attribute": "unit" }{{/helpers.highlight}}
+        </div>
+      </div>   
+    </div>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+</body>
