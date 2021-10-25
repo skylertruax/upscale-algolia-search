@@ -30,8 +30,8 @@ function sendMessage(event , origin = "*") {
 
 //Algolia InstantSearch.js API
 const searchClient = algoliasearch(
-  'EIV4W95IVS',
-  'c246677531e36c39898a2b57e3b045f5'
+  'AHP2BQCBJP',
+  '196b294e64b31c755a9a928f520d279f'
 );
 
 const search = instantsearch({
